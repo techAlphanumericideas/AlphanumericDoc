@@ -6,7 +6,8 @@ export async function POST(req:Request) {
 
     const body = await req.json();
 
-    const {title, discripstion,userEmail,dueDate} = body;
+    const {title,discripstion
+,userEmail,dueDate} = body;
     await ConectDb();
 
     const assignment = await Assignments.create({

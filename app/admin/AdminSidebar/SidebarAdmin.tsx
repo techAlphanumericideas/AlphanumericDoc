@@ -1,8 +1,40 @@
+'use client'
 import Link from "next/link"
+import { auth } from '@/app/lib/firebase'
+import { signOut } from 'firebase/auth'
+import { useRouter } from 'next/navigation'
 export default function AdminSidebar() {
+
+const router = useRouter();
+
+
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            const res = await fetch('/api/logout', {
+                method: 'POST'
+            })
+            if(res.ok){
+                router.replace('/login');
+                console.log(res)
+            }
+
+        } catch (err) {
+            console.log("error", err);
+        }
+    }
+
+
+
+
+
+
+
     return (
-        <div className='w-55 h-150'>
-            <div className='w-55 bg-gray-100 h-full text-start pt-5 pl-8'>
+        <section className=" sticky top-20 left-0 w-55 h-screen bg-gray-100 px-5">
+        <div className='w-55 '>
+            <div className='w-50 bg-gray-100 h-auto text-start pt-5 pl-8b '>
 
                 <ul>
                     <li className='text-blue-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin'>Admin</Link></li>
@@ -11,6 +43,8 @@ export default function AdminSidebar() {
 
                 </ul>
             </div>
+            <button onClick={handleLogout} className='bg-red-600 text-white py-2 px-12 rounded-full hover:bg-red-800 mt-70'>Logout</button>
         </div>
+        </section>
     )
 }

@@ -1,12 +1,21 @@
 import React from 'react'
 
-const Assignments = () => {
+type assignment ={
+    title: string;
+  discripstion: string;
+    userEmail: string;
+    dueDate: string;
+    status: string;
+}
+
+export default function Assignments({ assignment }: { assignment: assignment }) {
   return (
-    <div className='bg-amber-600 w-200 h-30'>
-          <h1 className='font-bold text-[20px]'>Create a HTML page</h1>
-          <p>sghosh@alphanumericideas.com</p>
-          <p>2026-03-17T00:00:00.000Z</p>
-          <p>pending</p>
+    <div className='bg-gray-900 w-200 h-50 border-2  border-blue-500 rounded-lg flex flex-col justify-center gap-2 px-5'>
+          <h1 className='font-bold text-[23px] text-green-500'>{assignment.title}</h1>
+      <p>{assignment.discripstion}</p>
+          <p><span className='font-semibold text-green-500'>Email:</span> {assignment.userEmail}</p>
+          <p><span className='text-red-500 font-semibold'>Due Date:</span> {assignment.dueDate}</p>
+          <p><span className='text-indigo-500 font-semibold'>Status:</span> {assignment.status}</p>
 
 
       
@@ -14,4 +23,4 @@ const Assignments = () => {
   )
 }
 
-export default Assignments
+

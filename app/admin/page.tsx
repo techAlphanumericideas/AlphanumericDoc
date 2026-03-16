@@ -36,25 +36,25 @@ export default function Page(){
 
    
     return(
-        <div>
+        <div className="w-full h-100 bg-gray-200 p-6">
             <h1 className='text-3xl font-bold mb-8 text-blue-600'>Admin Dashboard</h1>
             { 
             <div className=' flex gap-6 '>
-                <div className='p-6 text-center w-60 gap-5 rounded-full bg-indigo-500'>
+                <div className='p-6 text-center w-60 gap-5 rounded-full bg-indigo-700'>
                     <h2 className='text-xl text-white font-semibold'>Total User</h2>
                     <p className='text-2xl text-white font-bold'>{data.totalUser}</p>
                 </div>
 
-                <div className='p-6 text-center w-60 gap-5 rounded-full bg-sky-500'>
+                <div className='p-6 text-center w-60 gap-5 rounded-full bg-sky-700'>
                         <h2 className='text-xl text-white font-semibold'>Assignment</h2>
                         <p className='text-2xl text-white font-bold'>{data.totalAssignments}</p>
                 </div>
-                <div className='p-6 text-center w-60 gap-5 rounded-full bg-orange-400'>
+                <div className='p-6 text-center w-60 gap-5 rounded-full bg-orange-500'>
                         <h2 className='text-xl text-white font-semibold'>Compeleted</h2>
                         <p className='text-2xl text-white font-bold'>{data.compeleted}</p>
                 </div>
 
-                <div className='p-6 text-center w-60 gap-5 rounded-full bg-red-500'>
+                <div className='p-6 text-center w-60 gap-5 rounded-full bg-red-700'>
                     <h2 className='text-xl text-white font-semibold'>Pending</h2>
                         <p className='text-2xl text-white font-bold'>{data.pending}</p>
                 </div>
