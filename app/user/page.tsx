@@ -1,19 +1,39 @@
 'use client'
-import React from 'react'
-import { useEffect,useState } from 'react';
+import {auth} from '@/app/lib/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+import { useEffect, useState } from 'react'
+
 
 export default function UserPage(){
 
 
-     const [data, setData] = useState<any>({});
+    //  const [data, setData] = useState<any>({});
     
-        useEffect(() => {
+    //     useEffect(() => {
     
-            fetch("/api/userdashboard")
-                    .then(res => res.json())
-                    .then(setData);
+    //         fetch("/api/userdashboard")
+    //                 .then(res => res.json())
+    //                 .then(setData);
     
-            }, [])
+    //         }, [])
+    const [data, setData] = useState<any>({});
+
+    useEffect(() => {
+        const uns = onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                return
+            }
+            const email = user.email;
+            console.log('email', email)
+            fetch(`/api/userdashboard?email=${email}`)
+                .then(res => res.json())
+                .then(setData);
+        });
+        return () => uns();
+
+
+
+    }, [])
 
 
 

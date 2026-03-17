@@ -14,6 +14,20 @@ const Test = () => {
    const [data, setData] = useState<any>({});
   useEffect(() => {
 
+
+    const uns = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        return
+      }
+      const email = user.email;
+      console.log('email', email)
+      fetch(`/api/userdashboard?email=${email}`)
+        .then(res => res.json())
+        .then(setData);
+    });
+    return () => uns();
+
+
     fetch("/api/userdashboard")
       .then(res => res.json())
       .then(setData);
@@ -35,10 +49,10 @@ const Test = () => {
 
   return (
     <div>
-      <h1 className='text-black text-3xl font-bold '>WellCome User </h1>
+      <h1 className='text-black text-2xl font-bold '>Hello <span className='text-[20px]'>{auth.currentUser?.displayName} </span></h1>
 
     <div className='w-130 h-100 mt-10 border-2 ml-40'>
-      <div className='w-130 h-100  border-2 bg-sky-200 flex-col justify-center items-center'>
+      <div className='w-130 h-100  border-2  flex-col justify-center items-center'>
         <div className=' w-full h-1/2 flex-col justify-center items-center px-38 py-8'>
           <img className='ml-16 rounded-full mb-3' src={`${imgu}`} height={100} width={50} alt='profile pic' />
           <h1 className='text-black font-bold text-[20px] '>{auth.currentUser?.displayName}</h1>

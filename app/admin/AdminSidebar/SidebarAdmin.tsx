@@ -37,13 +37,13 @@ const router = useRouter();
             <div className='w-50 bg-gray-100 h-auto text-start pt-5 pl-8b '>
 
                 <ul>
-                    <li className='text-blue-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin'>Admin</Link></li>
-                    <li className='text-blue-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin/user'>Users</Link></li>
-                    <li className='text-blue-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin/assignment'>Assignment</Link></li>
+                        <li className='text-red-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin'>Admin</Link></li>
+                    <li className='text-red-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin/user'>Users</Link></li>
+                    <li className='text-red-500 font-bold text-[20px] border-2 w-40 rounded-full flex justify-center mt-5 text-center h-10 '><Link href='/admin/assignment'>Assignment</Link></li>
 
                 </ul>
             </div>
-            <button onClick={handleLogout} className='bg-red-600 text-white py-2 px-12 rounded-full hover:bg-red-800 mt-70'>Logout</button>
+            <button onClick={handleLogout} className='bg-red-600 border-2 font-bold text-white py-2 px-12 rounded-full hover:bg-red-800 mt-70'>Logout</button>
         </div>
         </section>
     )

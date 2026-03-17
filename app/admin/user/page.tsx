@@ -24,7 +24,7 @@ useEffect(()=>{
 
   return (
     <div className='w-full h-140  flex-col justify-center items-center'>
-      <h1 className='text-green-500 font-bold text-[27px]'>All User</h1>
+      <h1 className='text-gray-700 font-bold text-[27px]'>All User </h1>
       {
         user.map((u)=><Users key={u._id} user={u} />)
       }

@@ -67,12 +67,12 @@ const GoogleInWithSingin=async()=>{
                           <h1 className='font-bold text-[25px] ml-32 text-gray-800 '>LOGIN</h1>
                     <div className='text-black w-full h-15 flex-col mt-7'>
                               <label className='font-bold'>Enter Your Email</label><br/>
-                              <input name='' placeholder='Email' className="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body mt-1" />
+                              <input name='' placeholder='Email' className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-indigo-500"  />
 
                     </div>
                           <div className='text-black mt-8'>
                               <label className='font-bold'>Enter Your Password</label><br/>
-                              <input name='' placeholder='Password' className="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body mt-1" />
+                              <input name='' placeholder='Password' className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-indigo-500" />
                           </div>
                           <Link href={'/register'}><p className='pl-42 mt-2 text-decoration-line: underline text-black'>i dont have an account</p></Link>
                           <button className='bg-gray-800 text-white font-bold px-10 py-3 rounded-full hover:bg-black hover:cursor-pointer  ml-28 mt-6 shad  '>Login</button>
