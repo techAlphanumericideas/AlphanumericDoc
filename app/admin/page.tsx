@@ -90,7 +90,8 @@ export default function Page(){
             </div>
 
             <div className='bg-gray-100 w-full h-70 mt-10 flex-col justify-center border-2 items-center '>
-                <div className='flex justify-between'><p className='px-5 text-gray-700 ml-4 font-semibold'>Email</p>
+                <h1 className="text-center text-green-700 font-bold mr-40 mb-3">Worklist</h1>
+                <div className='flex justify-between'><p className='px-5 m-1 text-gray-700 ml-4 font-semibold'>Email</p>
                     <p className='px-5 text-gray-700 font-semibold ml-34'>Title</p>
                     <p className='px-5 text-gray-700 font-semibold ml-6'>Deadline</p>
                     <p className='px-5 text-gray-700 font-semibold mr-1'>Status</p>

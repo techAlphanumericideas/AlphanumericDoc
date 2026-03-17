@@ -75,7 +75,7 @@ const GoogleInWithSingin=async()=>{
                               <input name='' placeholder='Password' className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-indigo-500" />
                           </div>
                           <Link href={'/register'}><p className='pl-42 mt-2 text-decoration-line: underline text-black'>i dont have an account</p></Link>
-                          <button className='bg-gray-800 text-white font-bold px-10 py-3 rounded-full hover:bg-black hover:cursor-pointer  ml-28 mt-6 shad  '>Login</button>
+                          <button className='bg-blue-600 text-white font-bold px-10 py-3 rounded-full hover:bg-black hover:cursor-pointer  ml-28 mt-6 shad  '>Login</button>
                     
                 </div>
 

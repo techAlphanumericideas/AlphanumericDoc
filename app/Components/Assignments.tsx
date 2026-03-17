@@ -2,8 +2,10 @@ import React from 'react'
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import Link from 'next/link';
+import { useState } from 'react';
 
 type assignment ={
+  _id:string
     title: string;
   discripstion: string;
     userEmail: string;
@@ -12,6 +14,28 @@ type assignment ={
 }
 
 export default function Assignments({ assignment }: { assignment: assignment }) {
+
+
+  const [Assignment,setAssignment]= useState<assignment[]>([]);
+
+  async function deleted(id: string) {
+
+    const res = await fetch('/api/assignment-done', {
+      method: "POST",
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify({ id })
+    });
+    if (res.ok) {
+      setAssignment(prev => prev.map(a => a._id === id ? { ...a, status: 'done' } : a))
+    }
+  }
+
+
+
+
+
   return (
     <div className='text-gray-700 w-85 h-75 inset-ring-blue-500  bg-[#ffffff] inset-shadow-sm inset-shadow-red-500 transition-shadow border-r-[0.75em] ring-1 hover:cursor-pointer hover:bg-[#d3ddf1] hover:border-2  rounded-lg flex flex-col p-2 gap-2 px-5'>
           <h1 className='font-bold text-[20px] mt-4'>{assignment.title}</h1>

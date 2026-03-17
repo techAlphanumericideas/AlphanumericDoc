@@ -53,30 +53,30 @@ export default function AdminAssignments() {
     }
 
     return (
-        <div className="w-full h-140 bg-blue-100 rounded-lg flex justify-center items-center">
-        <div className="max-w-lg h-100  border-3 bg-gray-100">
+        <div className="w-full h-140 rounded-lg flex justify-center items-center">
+        <div className="max-w-lg h-100 ">
 
-            <h1 className="text-2xl mt-5 text-blue-500 text-center font-bold mb-6">
+            <h1 className="text-2xl  text-black text-center font-bold mb-5">
                 Create Assignment
             </h1>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-2 ml-15 text-black">
                 <input
                     placeholder="Title"
-                    className="border p-2 w-full text-black"
+                        className="w-100 px-4 py-3 rounded-lg border-2 mt-2  focus:ring-2 focus:ring-indigo-500"
                     onChange={(e) => setForm({ ...form, title: e.target.value })}
                 />
                 <textarea
                     placeholder="Description"
-                    className="border p-2 w-full text-black"
+                        className="w-100 px-4 py-3 rounded-lg border-2 mt-2  focus:ring-2 focus:ring-indigo-500"
                         onChange={(e) => setForm({ ...form, discripstion: e.target.value })}
                 />
                 <input
                     type="date"
-                    className="border p-2 w-full text-black"
+                        className="w-100 px-4 py-3 rounded-lg border-2 mt-2  focus:ring-2 focus:ring-indigo-500"
                     onChange={(e) => setForm({ ...form, dueDate: e.target.value })}
                 />
                 <select
-                    className="border p-2 w-full text-black"
+                        className="w-100 px-4 py-3 rounded-lg border-2 mt-2  focus:ring-2 focus:ring-indigo-500"
                     onChange={(e) => setForm({ ...form, userEmail: e.target.value })}
                 >
 

@@ -60,7 +60,7 @@ export default function Page() {
       <h1 className='text-2xl font-bold mb-6 text-black'>My Assignments</h1>
       <div className='grid  w-full grid-2 grid-cols-3 gap-5'>
       {assignment.length === 0 && (
-        <p>No Assignments</p>
+        <p className='text-black text-[20px] '>No Assignments</p>
       )}
       {assignment.map((a)=>(
         
